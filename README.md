@@ -1,45 +1,52 @@
-# RaceDay Part 2 - Student Guide
+# RaceDay API — Part 2
 
-This folder contains example code for building the RaceDay API in ASP.NET Core.
-The code is organised into small folders so it is easier to find each part.
+A sample ASP.NET Core API project for the RaceDay application. The code is organised into focused folders to make the application easier to explore and extend.
 
-## Important before you start
+> **Important:** This project is a learning resource, not a drop-in replacement for your existing solution. Review the guidance below before copying or applying changes.
 
-- Make a copy of your own project before changing anything.
-- **Do not replace your existing Program.cs with the Program.cs in this folder.** Keep the code your lecturer or you have already written. Compare the files and add only the missing registrations/middleware in the correct places.
-- This is a starting point, not proof that the project builds on your computer. Build and test it in Visual Studio and fix any errors based on your own project settings.
-- Check your namespace and database connection string. This sample uses `RaceDayApi` and `RaceDayConnection`.
-- Never share real passwords or database credentials in GitHub.
+## Getting Started
 
-## What the folders are for
+1. Open your existing RaceDay solution in Visual Studio.
+2. Back up your work or commit your current changes to Git.
+3. Review the sample files and compare them with your project before making changes.
+4. Confirm that namespaces, package versions, and database settings match your environment.
+5. Build the solution and resolve any errors before running the API or tests.
 
-- `Models`: C# classes that represent Organiser, Participant, Event, Category, Enrolment and Result.
-- `Data`: `RaceDayContext` connects the models to SQL Server using Entity Framework Core.
-- `DTOs`: classes used to receive information sent to API endpoints.
-- `Controllers`: the API routes, such as login, events, profile, enrolments and results.
-- `Services`: small helper classes used by the controllers.
-- `Tests`: an example automated test project.
-- `.github/workflows`: a basic GitHub Actions workflow for building/testing.
+## Project Structure
 
-## Suggested order
+| Folder | Purpose |
+|---|---|
+| `Models` | Data models for organisers, participants, events, categories, enrolments, and results. |
+| `Data` | Entity Framework Core database context and related configuration. |
+| `DTOs` | Data transfer objects used to define API request and response data. |
+| `Controllers` | API endpoints for authentication, events, profiles, enrolments, and results. |
+| `Services` | Helper services used by the application. |
+| `Tests` | Automated tests for application behaviour. |
+| `.github/workflows` | GitHub Actions workflows for building and testing the project. |
 
-1. Open your existing `RaceDayApi` solution in Visual Studio.
-2. Back up your solution or commit your current work to Git.
-3. Check that the EF Core SQL Server, Design and Tools packages are installed.
-4. Add or compare the model classes first.
-5. Add `RaceDayContext` and check its namespace.
-6. Compare `appsettings.json` with your own file and use your own SQL Server connection string.
-7. Merge the required lines into your existing `Program.cs`; do not delete your existing setup.
-8. Build the project. Fix errors before moving on.
-9. Create/apply migrations only after checking the database connection and existing database. Do not run scripts that drop tables if you need to keep the data.
-10. Run the API and test endpoints in Swagger. Then run the test project.
+## Configuration and Safety
 
-## Understanding the main files
+- **Do not replace your existing `Program.cs` with the sample file.** Preserve your current configuration and merge only the registrations or middleware you need.
+- Check that namespaces and configuration keys match your project. The sample refers to `RaceDayApi` and `RaceDayConnection`; your project may use different names.
+- Use your own database connection string. Never commit passwords, API keys, or other secrets to GitHub.
+- Review your database and migrations before applying changes. Do not run commands or scripts that drop tables if you need to preserve existing data.
+- Confirm that Entity Framework Core packages use compatible versions across the API and test projects.
 
-- `Program.cs` starts the application and registers services like controllers, the database and sessions.
-- `RaceDayContext.cs` tells Entity Framework which tables exist and how they relate.
-- Model classes describe the data stored for each table.
-- DTO classes describe the information an endpoint accepts from a request.
-- Controller methods handle requests and return HTTP responses.
+## Recommended Workflow
 
+1. Review the model classes and update them to fit your application.
+2. Review `RaceDayContext` and confirm that it uses the correct namespace and database configuration.
+3. Check `appsettings.json` and configure your local database connection securely.
+4. Compare the sample `Program.cs` with your existing file, then add only the required configuration.
+5. Build the solution.
+6. Run the API and verify its endpoints in Swagger.
+7. Run the automated tests and confirm they pass.
 
+## Testing
+
+The test project must reference the API project and include the required test framework packages. If tests use an in-memory database, install `Microsoft.EntityFrameworkCore.InMemory` in the **test project**. Its major version should match the Entity Framework Core version used by the API project.
+
+Run the tests from the solution directory:
+
+```bash
+dotnet test
