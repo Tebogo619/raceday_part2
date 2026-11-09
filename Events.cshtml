@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "Events";
+}
+
+<section class="events-hero">
+    <div class="container text-center">
+        <span class="section-label">FIND YOUR NEXT ADVENTURE</span>
+
+        <h1>Discover <span>Race Events</span></h1>
+
+        <p>
+            Find exciting races, challenge yourself and make
+            every kilometre count.
+        </p>
+    </div>
+</section>
+
+<section class="events-page-section">
+    <div class="container">
+
+        <div class="events-heading">
+            <div>
+                <h2>Explore Events</h2>
+                <p>There is a finish line waiting for everyone.</p>
+            </div>
+
+            <span class="event-count">3 Featured Events</span>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- EVENT 1 -->
+            <div class="col-md-4">
+                <div class="event-card">
+                    <div class="event-image event-image-blue">
+                        <span>🏃‍♀️</span>
+                        <span class="event-tag">Running</span>
+                    </div>
+
+                    <div class="event-card-body">
+                        <p class="event-date">📅 15 March 2027</p>
+                        <h3>City Fun Run</h3>
+                        <p>📍 Johannesburg</p>
+
+                        <p class="event-description">
+                            Enjoy a fun-filled running experience
+                            with fellow running enthusiasts.
+                        </p>
+
+                        <a asp-controller="Account"
+                           asp-action="Register"
+                           class="event-button">
+                            Register Now →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT 2 -->
+            <div class="col-md-4">
+                <div class="event-card">
+                    <div class="event-image event-image-green">
+                        <span>🏅</span>
+                        <span class="event-tag">Marathon</span>
+                    </div>
+
+                    <div class="event-card-body">
+                        <p class="event-date">📅 22 March 2027</p>
+                        <h3>Green Mile Challenge</h3>
+                        <p>📍 Pretoria</p>
+
+                        <p class="event-description">
+                            Take on a new challenge and test
+                            your endurance at this exciting event.
+                        </p>
+
+                        <a asp-controller="Account"
+                           asp-action="Register"
+                           class="event-button">
+                            Register Now →
+                            <a asp-controller="Home"
+                               asp-action="Details"
+                               asp-route-id="1"
+                               class="back-events-button">
+                                View Details →
+                            </a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT 3 -->
+            <div class="col-md-4">
+                <div class="event-card">
+                    <div class="event-image event-image-pink">
+                        <span>🏆</span>
+                        <span class="event-tag">Fun Run</span>
+                    </div>
+
+                    <div class="event-card-body">
+                        <p class="event-date">📅 5 April 2027</p>
+                        <h3>Sunrise Run</h3>
+                        <p>📍 Soweto</p>
+
+                        <p class="event-description">
+                            Start your morning with movement,
+                            motivation and a great atmosphere.
+                        </p>
+
+                        <a asp-controller="Account"
+                           asp-action="Register"
+                           class="event-button">
+                            Register Now →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="events-note">
+            <h3>Ready to take part?</h3>
+            <p>Create your RaceDay account and get ready for your next race.</p>
+
+            <a asp-controller="Account"
+               asp-action="Register"
+               class="btn btn-orange">
+                Join RaceDay →
+            </a>
+        </div>
+
+    </div>
+</section>

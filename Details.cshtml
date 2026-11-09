@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Event Details";
+}
+
+<section class="details-hero">
+    <div class="container">
+        <span class="section-label">RACEDAY EVENT</span>
+
+        <h1>@ViewBag.EventName</h1>
+
+        <p>Everything you need to know before race day!</p>
+    </div>
+</section>
+
+<section class="details-section">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- EVENT INFORMATION -->
+            <div class="col-lg-8">
+                <div class="details-card">
+
+                    <div class="details-image">
+                        <span>🏃‍♀️</span>
+                    </div>
+
+                    <span class="details-category">
+                        @ViewBag.Category
+                    </span>
+
+                    <h2>About This Event</h2>
+
+                    <p class="details-description">
+                        @ViewBag.Description
+                    </p>
+
+                    <hr />
+
+                    <h3>Event Information</h3>
+
+                    <div class="information-item">
+                        <span>📅</span>
+                        <div>
+                            <strong>Event Date</strong>
+                            <p>@ViewBag.Date</p>
+                        </div>
+                    </div>
+
+                    <div class="information-item">
+                        <span>📍</span>
+                        <div>
+                            <strong>Location</strong>
+                            <p>@ViewBag.Location</p>
+                        </div>
+                    </div>
+
+                    <div class="information-item">
+                        <span>🏁</span>
+                        <div>
+                            <strong>Event Category</strong>
+                            <p>@ViewBag.Category</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- REGISTRATION CARD -->
+            <div class="col-lg-4">
+                <div class="registration-card">
+
+                    <span class="section-label">READY TO RACE?</span>
+
+                    <h3>Join the Event!</h3>
+
+                    <p>
+                        Take the next step and get ready
+                        for an exciting race experience.
+                    </p>
+
+                    <a asp-controller="Account"
+                       asp-action="Register"
+                       class="details-register-button">
+                        Register Now →
+                    </a>
+
+                    <a asp-controller="Home"
+                       asp-action="Events"
+                       class="back-events-button">
+                        ← Back to Events
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
